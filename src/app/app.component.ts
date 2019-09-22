@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { spParser } from './sp_parser';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'sentenceParser';
+
+  ngOnInit(){
+    let parse = new spParser();
+    parse.setBuffer("we are the know.");
+    
+    let word = parse.readTillWhitespace();
+
+    return word;
+  }
 }
