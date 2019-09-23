@@ -5,8 +5,16 @@ export class spToken {
         return this._text;
     }
 
+    private isDigit(str):boolean {
+        return  /^\d+$/.test(str);
+      }
+
     isEmpty():boolean {
         return this._text === null ||  this._text === "";
+    }
+
+    isNumber():boolean {
+        return !this.isEmpty() && this.isDigit(this._text[0])
     }
 
     startsWithChar(char:string) {

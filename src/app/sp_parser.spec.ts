@@ -18,7 +18,7 @@ describe('spParser', () => {
     let parse = new spParser();
     parse.setBuffer("we are the know.");
 
-    let word = parse.readTillWhitespace();
+    let word = parse.readToken();
 
     expect(word.text).toContain("we");
   });
@@ -27,7 +27,7 @@ describe('spParser', () => {
     let parse = new spParser();
     parse.setBuffer(data);
 
-    let word = parse.readTillWhitespace();
+    let word = parse.readToken();
 
     expect(word.text).toContain('(a)');
   });

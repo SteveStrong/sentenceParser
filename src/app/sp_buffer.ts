@@ -28,4 +28,8 @@ export class spBuffer {
     }
     return undefined;
   }
+
+  advanceChar(lookAhead: number = 0) {
+    this._cur = this._cur + lookAhead;
+  }
 }
