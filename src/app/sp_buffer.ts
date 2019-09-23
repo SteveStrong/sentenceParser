@@ -12,7 +12,7 @@ export class spBuffer {
       let value = this._buffer[this._cur++];
       return value;
     }
-    return null;
+    return undefined;
   }
   putChar() {
     if (this._cur > 0) {
@@ -26,6 +26,6 @@ export class spBuffer {
     if (id < this._buffer.length) {
       return this._buffer[id];
     }
-    return null;
+    return undefined;
   }
 }
